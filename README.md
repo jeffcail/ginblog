@@ -3,33 +3,35 @@ Go+Gin+Gorm
 可查看我的博客：http://blog.caixiaoxin.cn
 
 ### 功能
-<span style="color:	#1E90FF;font-size:15px">创建管理员<br>
-<span style="color:	#1E90FF;font-size:15px">账号列表<br>
-<span style="color:	#1E90FF;font-size:15px">删除账号<br>
-<span style="color:	#1E90FF;font-size:15px">删除账号<br>
-<span style="color:	#1E90FF;font-size:15px">账号详情<br>
-<span style="color:	#1E90FF;font-size:15px">修改账号信息<br>
-<span style="color:	#1E90FF;font-size:15px">禁用<br>
-<span style="color:	#1E90FF;font-size:15px">启用<br>
-<span style="color:	#1E90FF;font-size:15px">创建标签<br>
-<span style="color:	#1E90FF;font-size:15px">标签列表<br>
-<span style="color:	#1E90FF;font-size:15px">修改标签名字<br>
-<span style="color:	#1E90FF;font-size:15px">删除标签<br>
-<span style="color:	#1E90FF;font-size:15px">创建分类<br>
-<span style="color:	#1E90FF;font-size:15px">分类列表<br>
-<span style="color:	#1E90FF;font-size:15px">修改分类名字<br>
-<span style="color:	#1E90FF;font-size:15px">删除分类<br>
-<span style="color:	#1E90FF;font-size:15px">写文章<br>
-<span style="color:	#1E90FF;font-size:15px">文章列表<br>
-<span style="color:	#1E90FF;font-size:15px">文章修改<br>
-<span style="color:	#1E90FF;font-size:15px">删除文章<br>
-<span style="color:	#1E90FF;font-size:15px">评论<br>
-<span style="color:	#1E90FF;font-size:15px">评论列表<br>
-<span style="color:	#1E90FF;font-size:15px">删除评论<br>
-<span style="color:	#1E90FF;font-size:15px">添加友联<br>
-<span style="color:	#1E90FF;font-size:15px">修改友联<br>
-<span style="color:	#1E90FF;font-size:15px">删除友联<br>
+```diff
++ <span style="color:	#1E90FF;font-size:15px">创建管理员<br>
++ <span style="color:	#1E90FF;font-size:15px">账号列表<br>
++ <span style="color:	#1E90FF;font-size:15px">删除账号<br>
++ <span style="color:	#1E90FF;font-size:15px">删除账号<br>
++ <span style="color:	#1E90FF;font-size:15px">账号详情<br>
++ <span style="color:	#1E90FF;font-size:15px">修改账号信息<br>
++ <span style="color:	#1E90FF;font-size:15px">禁用<br>
++ <span style="color:	#1E90FF;font-size:15px">启用<br>
++ <span style="color:	#1E90FF;font-size:15px">创建标签<br>
++ <span style="color:	#1E90FF;font-size:15px">标签列表<br>
++ <span style="color:	#1E90FF;font-size:15px">修改标签名字<br>
++ <span style="color:	#1E90FF;font-size:15px">删除标签<br>
++ <span style="color:	#1E90FF;font-size:15px">创建分类<br>
++ <span style="color:	#1E90FF;font-size:15px">分类列表<br>
++ <span style="color:	#1E90FF;font-size:15px">修改分类名字<br>
++ <span style="color:	#1E90FF;font-size:15px">删除分类<br>
++ <span style="color:	#1E90FF;font-size:15px">写文章<br>
++ <span style="color:	#1E90FF;font-size:15px">文章列表<br>
++ <span style="color:	#1E90FF;font-size:15px">文章修改<br>
++ <span style="color:	#1E90FF;font-size:15px">删除文章<br>
++ <span style="color:	#1E90FF;font-size:15px">评论<br>
++ <span style="color:	#1E90FF;font-size:15px">评论列表<br>
++ <span style="color:	#1E90FF;font-size:15px">删除评论<br>
++ <span style="color:	#1E90FF;font-size:15px">添加友联<br>
++ <span style="color:	#1E90FF;font-size:15px">修改友联<br>
++ <span style="color:	#1E90FF;font-size:15px">删除友联<br>
 
+```
 ### 设计目录结构
 ```shell
 目录结构
