@@ -1,6 +1,6 @@
 package main
 
-import "gin-blog-api/routers"
+import "gin-blog/routers"
 
 func main()  {
 

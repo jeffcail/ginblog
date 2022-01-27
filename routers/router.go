@@ -1,8 +1,8 @@
 package routers
 
 import (
-	"gin-blog-api/handler"
-	"gin-blog-api/middleware"
+	"gin-blog/handler"
+	"gin-blog/middleware"
 	"github.com/gin-gonic/gin"
 )
 

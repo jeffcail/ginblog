@@ -2,8 +2,8 @@ package service
 
 import (
 	"fmt"
-	core "gin-blog-api/db"
-	"gin-blog-api/models"
+	core "gin-blog/db"
+	"gin-blog/models"
 )
 
 //CreateTagsService

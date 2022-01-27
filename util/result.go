@@ -1,7 +1,7 @@
 package util
 
 import (
-	"gin-blog-api/types"
+	"gin-blog/types"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"time"

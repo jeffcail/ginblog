@@ -2,9 +2,9 @@ package service
 
 import (
 	"fmt"
-	"gin-blog-api/constants"
-	core "gin-blog-api/db"
-	"gin-blog-api/models"
+	"gin-blog/constants"
+	core "gin-blog/db"
+	"gin-blog/models"
 )
 
 //CreateUserService

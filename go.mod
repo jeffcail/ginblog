@@ -1,4 +1,4 @@
-module gin-blog-api
+module gin-blog
 
 go 1.17
 

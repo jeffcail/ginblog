@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"gin-blog-api/handler"
-	"gin-blog-api/types"
-	"gin-blog-api/util"
+	"gin-blog/handler"
+	"gin-blog/types"
+	"gin-blog/util"
 	"github.com/gin-gonic/gin"
 	"strings"
 )

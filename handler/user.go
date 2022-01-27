@@ -2,9 +2,9 @@ package handler
 
 import (
 	"fmt"
-	"gin-blog-api/service"
-	"gin-blog-api/types"
-	"gin-blog-api/util"
+	"gin-blog/service"
+	"gin-blog/types"
+	"gin-blog/util"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )
