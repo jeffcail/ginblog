@@ -4,32 +4,32 @@ Go+Gin+Gorm
 
 ### 功能
 ```diff
-+ <span style="color:	#1E90FF;font-size:15px">创建管理员<br>
-+ <span style="color:	#1E90FF;font-size:15px">账号列表<br>
-+ <span style="color:	#1E90FF;font-size:15px">删除账号<br>
-+ <span style="color:	#1E90FF;font-size:15px">删除账号<br>
-+ <span style="color:	#1E90FF;font-size:15px">账号详情<br>
-+ <span style="color:	#1E90FF;font-size:15px">修改账号信息<br>
-+ <span style="color:	#1E90FF;font-size:15px">禁用<br>
-+ <span style="color:	#1E90FF;font-size:15px">启用<br>
-+ <span style="color:	#1E90FF;font-size:15px">创建标签<br>
-+ <span style="color:	#1E90FF;font-size:15px">标签列表<br>
-+ <span style="color:	#1E90FF;font-size:15px">修改标签名字<br>
-+ <span style="color:	#1E90FF;font-size:15px">删除标签<br>
-+ <span style="color:	#1E90FF;font-size:15px">创建分类<br>
-+ <span style="color:	#1E90FF;font-size:15px">分类列表<br>
-+ <span style="color:	#1E90FF;font-size:15px">修改分类名字<br>
-+ <span style="color:	#1E90FF;font-size:15px">删除分类<br>
-+ <span style="color:	#1E90FF;font-size:15px">写文章<br>
-+ <span style="color:	#1E90FF;font-size:15px">文章列表<br>
-+ <span style="color:	#1E90FF;font-size:15px">文章修改<br>
-+ <span style="color:	#1E90FF;font-size:15px">删除文章<br>
-+ <span style="color:	#1E90FF;font-size:15px">评论<br>
-+ <span style="color:	#1E90FF;font-size:15px">评论列表<br>
-+ <span style="color:	#1E90FF;font-size:15px">删除评论<br>
-+ <span style="color:	#1E90FF;font-size:15px">添加友联<br>
-+ <span style="color:	#1E90FF;font-size:15px">修改友联<br>
-+ <span style="color:	#1E90FF;font-size:15px">删除友联<br>
+创建管理员
+账号列表
+删除账号
+删除账号
+账号详情
+修改账号信息
+禁用
+启用
+创建标签
+标签列表
+修改标签名字
+删除标签
+创建分类
+分类列表
+修改分类名字
+删除分类
+写文章
+文章列表
+文章修改
+删除文章
+评论
+评论列表
+删除评论
+添加友联
+修改友联
+删除友联
 
 ```
 ### 设计目录结构
