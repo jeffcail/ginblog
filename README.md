@@ -36,23 +36,23 @@ Go+Gin+Gorm
 ### 设计目录结构
 ```shell
 目录结构
-	constants                    # 定义常量目录
+	constants                       # 定义常量目录
 		state.go 
 	db                              # 数据库连接初始化
 		core.go
-	handler                      # 控制器
+	handler                         # 控制器
 		......
-	middleware               # 中间件
+	middleware                      # 中间件
 		......
-	models                      # 模型
+	models                          # 模型
 		......
-	routers                      # 路由
+	routers                         # 路由
 		router.go
-	service                      # 服务层，业务逻辑处理，与models交互操作数据库
+	service                         # 服务层，业务逻辑处理，与models交互操作数据库
 		......
-	types                        # 状态码，状态信息
+	types                           # 状态码，状态信息
 		code.go
-	util                           # 工具包
+	util                            # 工具包
 		encrypt.go
 		result.go
 	.gitignore
