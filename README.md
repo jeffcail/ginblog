@@ -69,7 +69,16 @@ git clone git@github.com:jeffcail/gin-blog.git
 ➜ cd gin-blog
 ➜ gowatch gin-blog
 ```
-![img.png](go-gowatch.png)
 
-### 测试部署是否成功
-![img_1.png](login.png)
+```shell
+cd gin-blog/admin
+
+npm run serve
+```
+访问: localhost:8081
+
+admin / 123456
+
+![](login.png)
+
+![](tag.png)
