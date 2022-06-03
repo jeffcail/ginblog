@@ -1,6 +1,7 @@
 ### Go语言开发博客。<br>
 Go+Gin+Gorm
-可查看我的博客：http://blog.caixiaoxin.cn
+可查看我的博客：
+太阳上的雨天  http://blog.caixiaoxin.cn
 
 ### 功能
 ```diff
@@ -79,6 +80,6 @@ npm run serve
 
 admin / 123456
 
-![](login.png)
+![登陆](./login.png)
+![标签](./tag.png)
 
-![](tag.png)
