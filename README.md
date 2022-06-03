@@ -79,7 +79,3 @@ npm run serve
 访问: localhost:8081
 
 admin / 123456
-
-![登陆](login.png)
-![标签](tag.png)
-
