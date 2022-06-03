@@ -1,0 +1,255 @@
+
+.morder-part {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    .morder-part-cont {
+        overflow-y: auto;
+        position: relative;
+        width: 90%; height: 90%;
+        text-align: left;
+        background: #fff;
+        border-radius: 5px;
+
+        &.cont-center {
+            text-align: center;
+        }
+
+        #content {
+            margin: 20px;
+        }
+
+        .content-header {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: bold;
+
+            span {
+                margin-left: 25px;
+            }
+        }
+
+        .content-footer {
+            // max-width: 800px;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: right;
+
+            span {
+                margin-left: 25px;
+            }
+        }
+
+        .content-list p {
+            margin-bottom: 5px;
+
+            span {
+                width: 80px;
+                display: inline-block;
+            }
+        }
+
+        .content-table-title {
+            padding: 20px 0 10px 0;
+            font-weight: bold;
+        }
+
+        .morder-part-btn {
+            position: absolute;
+            right: 100px; top: 10px;
+            width: 100px; height: 40px;
+        }
+
+        .ivu-page {
+            padding-top: 10px;
+            text-align: center;
+        }
+    }
+
+    .morder-ship-cont {
+        position: relative;
+        width: 90%; height: 90%;
+        padding: 20px;
+        text-align: left;
+        background: #fff;
+        border-radius: 5px;
+
+        // 创建编辑版面业务区域
+        .save-cont-box {
+            width: 97%;
+            height: 90%;
+            margin-bottom: 10px;
+            overflow: auto;
+            border-bottom: 1px solid #d8d8d8;
+            position: relative;
+
+            &::-webkit-scrollbar{
+                width: 6px; height: 6px;
+                background-color: #f1f1f1;
+                border-radius: 6px;
+            }
+            &::-webkit-scrollbar-button{
+                height: 10px;
+                background-color: white;
+                border-radius: 6px;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: #07b699;
+                border-radius: 6px;
+
+                &:hover{
+                    background-color: #0ca38a;
+                }
+            }
+        }
+    }
+
+    .morder-part-shut, .morder-ship-shut {
+        position: absolute;
+        right: 15px; top: 15px;
+        color: #09b396;
+        font-size: 30px;
+        cursor: pointer;
+        transition: transform .5s;
+
+        &:hover{
+            transform: rotate(180deg) scale(1.5);
+        }
+    }
+
+    // 弹窗组件左上角×按钮
+    .dialog_box_close{
+        position: absolute;
+        top: 60px; right: 120px;
+        color: #09b396;
+        font-size: 30px;
+        cursor: pointer;
+        transition: transform .5s;
+
+        &:hover{
+            transform: rotate(180deg) scale(1.5);
+        }
+    }
+}
+
+.demo-upload-list {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin-right: 4px;
+
+    &.long {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .demo-upload-list-cover {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+
+        .cover-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        i {
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            margin: 0 2px;
+        }
+    }
+
+    &:hover .demo-upload-list-cover {
+        display: block;
+    }
+}
+
+// 弹窗组件宽度限制, 兼容打印宽度
+// .ivu-table-wrapper {
+//     max-width: 800px;
+// }
+
+.ivu-form .form-label-bold .ivu-form-item-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+// 分割线
+.content-line {
+    width: 100%;
+    height: 1px;
+    background: #d8d8d8;
+    margin: 10px auto;
+}
+
+// Button
+.button-third {
+    padding: 5px 0 6px;
+    background: #fff;
+    border: 1px solid #F58F23;
+    color: #F58F23;
+}
+
+.button-second {
+    padding: 5px 0 6px;
+    background: #fff;
+    border: 1px solid #09b396;
+    color: #09b396;
+}
+
+.button-first {
+    padding: 5px 0 6px;
+    background: #fff;
+    border: 1px solid #f00718;
+    color: #f00718;
+}
+
+.button-fourth {
+    padding: 5px 0 6px;
+    background: #09b396;
+    border: 1px solid #09b396;
+    color: #fff;
+}
+
+.save-cont-button { // save-cont-box下方button样式
+    min-width: 100px;
+
+    &.button-left {
+        margin-left: 400px;
+    }
+
+    &.button-second-left {
+        margin-left: 200px;
+    }
+
+    &.button-first-left {
+        margin-left: 50px;
+    }
+}

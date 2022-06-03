@@ -18,5 +18,5 @@ func (m *Link) Link() string {
 func init()  {
 	db := core.GetDB()
 
-	db.AutoMigrate(&Category{})
+	db.AutoMigrate(&Link{})
 }

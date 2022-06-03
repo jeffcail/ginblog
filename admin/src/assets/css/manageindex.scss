@@ -1,0 +1,110 @@
+.app-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.container {
+    width: calc(100% - $sideBarWidth);
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    transition: all 0.28s;
+
+    &.hidderContainer {
+        width: calc(100% - $hideSideBarWidth);
+    }
+    
+}
+::v-deep .el-header {
+    padding: 0;
+}
+.el-menu-item{
+    height: 40px !important;
+    line-height: 40px !important;
+}
+.el-menu-item.is-active{
+    background-color: #009688 !important;
+}
+.caidan-auth{
+    font-size: 14px;
+    font-style: normal;
+    color: rgba(255,255,255,.7);
+    margin-left: 10px;
+}
+.caidan-auth-children{
+    height: 100%;
+    font-size: 14px;
+    font-style: normal;
+    color: rgba(255,255,255,.7);
+    margin-left: 10px;
+}
+.htgl-title{
+    background-color: #20222A;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%);
+    color: rgba(255,255,255,.8);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+.el-header {
+    --el-header-height: 50px !important;
+}
+.el-sub-menu .el-menu-item {
+    height: 56px;
+    line-height: 56px;
+    padding: 0 45px;
+    min-width: 200px;
+}
+.backstage-manage{
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,.8);
+    font-size: 16px;
+}
+.toolbar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+
+    .toolbar-open-close{
+        margin-left: 25px; 
+        display: flex;
+    }
+    .el-breadcrumb{
+        margin-left: 20px;
+    }
+    .toolbar-select{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toolbar-select .elIcon{
+        margin-right: 8px; 
+        margin-top: 5px;
+    }
+    .toolbar-select .username-sel{
+        padding-top: 3px;
+    }
+}
+::v-deep .el-scrollbar__view{
+    height: 100% !important;
+}
+
+.el-main {
+    --el-main-padding: 16px;
+}
+

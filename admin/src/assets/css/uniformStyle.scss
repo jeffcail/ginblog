@@ -1,0 +1,106 @@
+.content{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+
+    .content-box {
+        max-width: 1500px;
+        height: 120px;
+        text-align: left;
+        // 一行
+        &.box-one {
+            height: 60px;
+        }
+        // 三行
+        &.box-three {
+            height: 150px;
+        }
+
+        &.box-three-one {
+            height: 175px;
+        }
+
+        &.box-one-one {
+            height: 100px;
+        }
+
+        .ivu-row {
+            margin-bottom: 15px;
+        }
+
+        // 一个元素内最多存放5个元素
+        .content-list, .col5 {
+            display: inline-block;
+            min-width: 100px;
+            width: calc(100% / 5 - 10px);
+            margin-right: 10px;
+        }
+
+        .content-list12 {
+            min-width: 100px;
+            width: 30%;
+            margin-right: 10px;
+        }
+
+        .content-list17 {
+            min-width: 100px;
+            width: 21.177%;
+            margin-right: 10px;
+        }
+
+        .content-list20 {
+            min-width: 100px;
+            width: 18.001%;
+            margin-right: 10px;
+        }
+
+        .content-list24 {
+            min-width: 100px;
+            width: 15%;
+            margin-right: 10px;
+        }
+
+        .supertube-btn {
+            min-width: 120px;
+            margin-top: 25px;
+            margin-right: 10px;
+            background-color: #09b396 !important;
+            border: 1px solid #09b396 !important;
+            color: #fff !important;
+        }
+
+        .supertube-text {
+            display: inline-block;
+            vertical-align: middle;
+            padding-top: 20px;
+        }
+    }
+}
+
+::v-deep .el-table .is-leaf {
+    background-color: #FAFAFA !important;
+}
+.demo-pagination-block  {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    
+    .el-pagination .el-select .el-input {
+        width: 90px !important;
+    }
+}
+::v-deep .el-select{
+    width: 192px;
+    height: 32px !important;
+
+    .el-input--large .el-input__inner {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 15px;
+    }
+}
+
+::v-deep .el-table .warning-row {
+    --el-table-tr-bg-color: #FAFAFA !important;
+}
