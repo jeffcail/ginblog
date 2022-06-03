@@ -80,6 +80,6 @@ npm run serve
 
 admin / 123456
 
-![登陆](./login.png)
-![标签](./tag.png)
+![登陆](login.png)
+![标签](tag.png)
 
