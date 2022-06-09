@@ -1,0 +1,5 @@
+*.yaml linguist-language=Go
+*.xml linguist-language=Go
+*.js linguist-language=Go
+*.vue linguist-language=Go
+*.css linguist-language=Go
