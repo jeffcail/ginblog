@@ -63,6 +63,8 @@ Go+Gin+Gorm
 	README.md
 ``` 
 ### 本机部署
+
+### 后端
 ```git
 git clone git@github.com:jeffcail/gin-blog.git
 ```
@@ -71,6 +73,7 @@ git clone git@github.com:jeffcail/gin-blog.git
 ➜ gowatch gin-blog
 ```
 
+### 前端 vue
 ```shell
 cd gin-blog/admin
 
