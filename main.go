@@ -1,8 +1,8 @@
 package main
 
-import "gin-blog/routers"
+import "github.com/jeffcail/gin-blog/routers"
 
-func main()  {
+func main() {
 
 	routers.InitRouter()
 

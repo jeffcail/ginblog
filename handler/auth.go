@@ -3,12 +3,12 @@ package handler
 import (
 	"errors"
 	"fmt"
-	core "gin-blog/db"
-	"gin-blog/models"
-	"gin-blog/types"
-	"gin-blog/util"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
+	core "github.com/jeffcail/gin-blog/db"
+	"github.com/jeffcail/gin-blog/models"
+	"github.com/jeffcail/gin-blog/types"
+	"github.com/jeffcail/gin-blog/util"
 	"time"
 )
 
@@ -51,7 +51,7 @@ func ParseToken(tokenString string) (*JWTClaims, error) {
 	return nil, errors.New("invalid token")
 }
 
-//AuthLogin
+// AuthLogin
 func AuthLogin(c *gin.Context) {
 	// 用户发送用户名和密码过来
 	username := c.PostForm("username")
@@ -60,8 +60,8 @@ func AuthLogin(c *gin.Context) {
 	db := core.GetDB()
 
 	type UserInfo struct {
-		Username  string
-		Password  string
+		Username string
+		Password string
 	}
 	userInfo := make([]UserInfo, 2)
 	db.First(&models.User{}).Where("username = ? AND password = ?", username, password).Scan(&userInfo)

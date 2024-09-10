@@ -1,11 +1,11 @@
 package service
 
 import (
-	core "gin-blog/db"
-	"gin-blog/models"
+	core "github.com/jeffcail/gin-blog/db"
+	"github.com/jeffcail/gin-blog/models"
 )
 
-//CreateCateService
+// CreateCateService
 func CreateCateService(name string) (flag int, err error) {
 	db := core.GetDB()
 
@@ -26,7 +26,7 @@ func CreateCateService(name string) (flag int, err error) {
 	return 1, nil
 }
 
-//GetCateListService
+// GetCateListService
 func GetCateListService() (cate []*models.Category) {
 	db := core.GetDB()
 
@@ -35,7 +35,7 @@ func GetCateListService() (cate []*models.Category) {
 	return cate
 }
 
-//UpdateCateByIdService
+// UpdateCateByIdService
 func UpdateCateByIdService(id int, name string) (flag int, err error) {
 	db := core.GetDB()
 
@@ -56,17 +56,19 @@ func UpdateCateByIdService(id int, name string) (flag int, err error) {
 	return 1, err
 }
 
-//DeleteCateByIdService
+// DeleteCateByIdService
 func DeleteCateByIdService(id int) (flag int, err error) {
 	db := core.GetDB()
 
 	cate := models.Category{}
 
-	err = db.First(&cate, id).Error; if err != nil {
+	err = db.First(&cate, id).Error
+	if err != nil {
 		return 0, nil
 	}
 
-	err = db.Delete(&cate, id).Error; if err != nil {
+	err = db.Delete(&cate, id).Error
+	if err != nil {
 		return 2, err
 	}
 

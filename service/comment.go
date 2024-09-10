@@ -1,8 +1,8 @@
 package service
 
 import (
-	core "gin-blog/db"
-	"gin-blog/models"
+	core "github.com/jeffcail/gin-blog/db"
+	"github.com/jeffcail/gin-blog/models"
 )
 
 // CreateCommentService
@@ -10,9 +10,9 @@ func CreateCommentService(post_id int, comment_content string, email string) boo
 	db := core.GetDB()
 
 	tx := db.Create(&models.Comment{
-		PostID: post_id,
+		PostID:         post_id,
 		CommentContent: comment_content,
-		Email: email,
+		Email:          email,
 	})
 
 	if tx.RowsAffected > 0 {
@@ -37,11 +37,13 @@ func DelCommentByIdService(id int) (flag int, err error) {
 
 	comment := models.Comment{}
 
-	err = db.First(&comment, id).Error; if err != nil {
+	err = db.First(&comment, id).Error
+	if err != nil {
 		return 0, nil
 	}
 
-	err = db.Delete(&comment, id).Error; if err != nil {
+	err = db.Delete(&comment, id).Error
+	if err != nil {
 		return 2, err
 	}
 

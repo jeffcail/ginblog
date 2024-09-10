@@ -1,7 +1,7 @@
 package models
 
 import (
-	core "gin-blog/db"
+	core "github.com/jeffcail/gin-blog/db"
 	"gorm.io/gorm"
 )
 
@@ -21,6 +21,6 @@ func (p *Posts) Posts() string {
 	return "posts"
 }
 
-func init()  {
+func init() {
 	core.GetDB().AutoMigrate(&Posts{})
 }

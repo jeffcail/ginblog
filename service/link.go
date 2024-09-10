@@ -1,11 +1,11 @@
 package service
 
 import (
-	core "gin-blog/db"
-	"gin-blog/models"
+	core "github.com/jeffcail/gin-blog/db"
+	"github.com/jeffcail/gin-blog/models"
 )
 
-//CreateLinkService
+// CreateLinkService
 func CreateLinkService(name, url string) bool {
 	db := core.GetDB()
 
@@ -17,7 +17,7 @@ func CreateLinkService(name, url string) bool {
 	return false
 }
 
-//GetLinkListService
+// GetLinkListService
 func GetLinkListService() (links []*models.Link) {
 	db := core.GetDB()
 
@@ -26,11 +26,12 @@ func GetLinkListService() (links []*models.Link) {
 	return
 }
 
-//UpdateLinkByIdService
+// UpdateLinkByIdService
 func UpdateLinkByIdService(id int, name, url string) (link *models.Link, flag int) {
 	db := core.GetDB()
 
-	err := db.First(&link, id).Error; if err != nil {
+	err := db.First(&link, id).Error
+	if err != nil {
 		return link, 0
 	}
 
@@ -45,11 +46,12 @@ func UpdateLinkByIdService(id int, name, url string) (link *models.Link, flag in
 	return link, 2
 }
 
-//DeleteLinkByIdService
+// DeleteLinkByIdService
 func DeleteLinkByIdService(id int) int {
 	db := core.GetDB()
 
-	err := db.First(&models.Link{}, id).Error; if err != nil {
+	err := db.First(&models.Link{}, id).Error
+	if err != nil {
 		return 0
 	}
 

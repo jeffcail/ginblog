@@ -1,16 +1,17 @@
 package handler
 
 import (
-	"gin-blog/service"
-	"gin-blog/types"
-	"gin-blog/util"
 	"github.com/gin-gonic/gin"
+	"github.com/jeffcail/gin-blog/service"
+	"github.com/jeffcail/gin-blog/types"
+	"github.com/jeffcail/gin-blog/util"
 	"strconv"
 )
 
-//CreateCate
+// CreateCate
 func CreateCate(c *gin.Context) {
-	name, ok :=c.GetPostForm("name"); if !ok {
+	name, ok := c.GetPostForm("name")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
@@ -25,25 +26,28 @@ func CreateCate(c *gin.Context) {
 	}
 }
 
-//GetCateList
+// GetCateList
 func GetCateList(c *gin.Context) {
 	cate := service.GetCateListService()
 	util.Success(c, cate)
 }
 
-//UpdateCateById
+// UpdateCateById
 func UpdateCateById(c *gin.Context) {
-	id, ok := c.GetPostForm("id"); if !ok {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	name, ok := c.GetPostForm("name"); if !ok {
+	name, ok := c.GetPostForm("name")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
@@ -58,14 +62,16 @@ func UpdateCateById(c *gin.Context) {
 	}
 }
 
-//DeleteCateById
+// DeleteCateById
 func DeleteCateById(c *gin.Context) {
-	id, ok := c.GetPostForm("id"); if !ok {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}

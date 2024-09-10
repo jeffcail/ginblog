@@ -1,36 +1,41 @@
 package handler
 
 import (
-	"gin-blog/service"
-	"gin-blog/types"
-	"gin-blog/util"
 	"github.com/gin-gonic/gin"
+	"github.com/jeffcail/gin-blog/service"
+	"github.com/jeffcail/gin-blog/types"
+	"github.com/jeffcail/gin-blog/util"
 	"strconv"
 )
 
-//CreateComment
+// CreateComment
 func CreateComment(c *gin.Context) {
-	post_id, ok := c.GetPostForm("post_id"); if !ok {
+	post_id, ok := c.GetPostForm("post_id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	convert_post_id, err := strconv.Atoi(post_id); if err != nil {
+	convert_post_id, err := strconv.Atoi(post_id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	comment_content, ok := c.GetPostForm("comment_content"); if !ok {
+	comment_content, ok := c.GetPostForm("comment_content")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	email, ok := c.GetPostForm("email"); if !ok {
+	email, ok := c.GetPostForm("email")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	ok = service.CreateCommentService(convert_post_id, comment_content, email); if !ok {
+	ok = service.CreateCommentService(convert_post_id, comment_content, email)
+	if !ok {
 		util.Error(c, int(types.ApiCode.FAILED), types.ApiCode.GetMessage(types.ApiCode.FAILED))
 		return
 	}
@@ -38,21 +43,23 @@ func CreateComment(c *gin.Context) {
 	util.Success(c, nil)
 }
 
-//GetCommentList
+// GetCommentList
 func GetCommentList(c *gin.Context) {
 	comments := service.GetCommentListService()
 
 	util.Success(c, comments)
 }
 
-//DelCommentById
+// DelCommentById
 func DelCommentById(c *gin.Context) {
-	id, ok := c.GetPostForm("id"); if !ok {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	convert_id, err := strconv.Atoi(id); if err != nil {
+	convert_id, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}

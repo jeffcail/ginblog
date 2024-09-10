@@ -1,7 +1,7 @@
 package models
 
 import (
-	core "gin-blog/db"
+	core "github.com/jeffcail/gin-blog/db"
 	"gorm.io/gorm"
 )
 
@@ -15,6 +15,6 @@ func (t *Tags) Tags() string {
 	return "tags"
 }
 
-func init()  {
+func init() {
 	core.GetDB().AutoMigrate(&Tags{})
 }

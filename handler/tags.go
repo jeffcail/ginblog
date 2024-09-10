@@ -1,21 +1,23 @@
 package handler
 
 import (
-	"gin-blog/service"
-	"gin-blog/types"
-	"gin-blog/util"
 	"github.com/gin-gonic/gin"
+	"github.com/jeffcail/gin-blog/service"
+	"github.com/jeffcail/gin-blog/types"
+	"github.com/jeffcail/gin-blog/util"
 	"strconv"
 )
 
-//CreateTags
-func CreateTags(c *gin.Context)  {
-	name, ok := c.GetPostForm("name"); if !ok {
+// CreateTags
+func CreateTags(c *gin.Context) {
+	name, ok := c.GetPostForm("name")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	_, ok, res := service.CreateTagsService(name); if !ok {
+	_, ok, res := service.CreateTagsService(name)
+	if !ok {
 		util.Error(c, int(types.ApiCode.EXISTSNAME), types.ApiCode.GetMessage(types.ApiCode.EXISTSNAME))
 		return
 	}
@@ -28,26 +30,29 @@ func CreateTags(c *gin.Context)  {
 	util.Success(c, nil)
 }
 
-//GetTagsList
-func GetTagsList(c *gin.Context)  {
+// GetTagsList
+func GetTagsList(c *gin.Context) {
 	tags := service.GetTagsListService()
 
 	util.Success(c, tags)
 }
 
-//UpdateTagsById
-func UpdateTagsById(c *gin.Context)  {
-	id, ok := c.GetPostForm("id"); if !ok {
+// UpdateTagsById
+func UpdateTagsById(c *gin.Context) {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	name, ok := c.GetPostForm("name"); if !ok {
+	name, ok := c.GetPostForm("name")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
@@ -65,14 +70,16 @@ func UpdateTagsById(c *gin.Context)  {
 	}
 }
 
-//DeleteTagsById
-func DeleteTagsById(c *gin.Context)  {
-	id, ok := c.GetPostForm("id"); if !ok {
+// DeleteTagsById
+func DeleteTagsById(c *gin.Context) {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}

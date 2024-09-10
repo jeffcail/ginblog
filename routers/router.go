@@ -1,9 +1,9 @@
 package routers
 
 import (
-	"gin-blog/handler"
-	"gin-blog/middleware"
 	"github.com/gin-gonic/gin"
+	"github.com/jeffcail/gin-blog/handler"
+	"github.com/jeffcail/gin-blog/middleware"
 )
 
 func InitRouter() {
@@ -73,7 +73,6 @@ func InitRouter() {
 		linkGroup.POST("/update-link-by-id", handler.UpdateLinkById)
 		linkGroup.POST("/del-link-by-id", handler.DeleteLinkById)
 	}
-
 
 	r.Run(":8080")
 }

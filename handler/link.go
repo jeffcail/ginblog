@@ -1,26 +1,29 @@
 package handler
 
 import (
-	"gin-blog/service"
-	"gin-blog/types"
-	"gin-blog/util"
 	"github.com/gin-gonic/gin"
+	"github.com/jeffcail/gin-blog/service"
+	"github.com/jeffcail/gin-blog/types"
+	"github.com/jeffcail/gin-blog/util"
 	"strconv"
 )
 
-//CreateLink
-func CreateLink(c *gin.Context)  {
-	name, ok := c.GetPostForm("name"); if !ok {
+// CreateLink
+func CreateLink(c *gin.Context) {
+	name, ok := c.GetPostForm("name")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	url, ok := c.GetPostForm("url"); if !ok {
+	url, ok := c.GetPostForm("url")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	ok = service.CreateLinkService(name, url); if !ok {
+	ok = service.CreateLinkService(name, url)
+	if !ok {
 		util.Error(c, int(types.ApiCode.FAILED), types.ApiCode.GetMessage(types.ApiCode.FAILED))
 		return
 	}
@@ -28,31 +31,35 @@ func CreateLink(c *gin.Context)  {
 	util.Success(c, nil)
 }
 
-//GetLinkList
-func GetLinkList(c *gin.Context)  {
+// GetLinkList
+func GetLinkList(c *gin.Context) {
 	links := service.GetLinkListService()
 
 	util.Success(c, links)
 }
 
-//UpdateLinkById
-func UpdateLinkById(c *gin.Context)  {
-	id, ok := c.GetPostForm("id"); if !ok {
+// UpdateLinkById
+func UpdateLinkById(c *gin.Context) {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	convert_id, err := strconv.Atoi(id); if err != nil {
+	convert_id, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	name, ok := c.GetPostForm("name"); if !ok {
+	name, ok := c.GetPostForm("name")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	url, ok := c.GetPostForm("url"); if !ok {
+	url, ok := c.GetPostForm("url")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
@@ -71,14 +78,16 @@ func UpdateLinkById(c *gin.Context)  {
 	}
 }
 
-//DeleteLinkById
-func DeleteLinkById(c *gin.Context)  {
-	id, ok := c.GetPostForm("id"); if !ok {
+// DeleteLinkById
+func DeleteLinkById(c *gin.Context) {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	convert_id, err := strconv.Atoi(id); if err != nil {
+	convert_id, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}

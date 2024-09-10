@@ -2,11 +2,11 @@ package service
 
 import (
 	"fmt"
-	core "gin-blog/db"
-	"gin-blog/models"
+	core "github.com/jeffcail/gin-blog/db"
+	"github.com/jeffcail/gin-blog/models"
 )
 
-//CreateTagsService
+// CreateTagsService
 func CreateTagsService(name string) (tags *models.Tags, ok bool, res bool) {
 	db := core.GetDB()
 
@@ -25,31 +25,34 @@ func CreateTagsService(name string) (tags *models.Tags, ok bool, res bool) {
 	return tags, false, false
 }
 
-//GetTagsListService
-func GetTagsListService() (tags []*models.Tags){
+// GetTagsListService
+func GetTagsListService() (tags []*models.Tags) {
 	db := core.GetDB()
 
 	db.Find((&tags))
 	return tags
 }
 
-//UpdateTagsByIdService
+// UpdateTagsByIdService
 func UpdateTagsByIdService(id int, name string) (tags *models.Tags, flag int) {
 	db := core.GetDB()
 
-	err := db.First(&tags, id).Error; if err != nil {
+	err := db.First(&tags, id).Error
+	if err != nil {
 		flag = 0
 		return tags, flag
 	}
 
-	err = db.Where("name = ?", name).First(&tags).Error; if err == nil {
+	err = db.Where("name = ?", name).First(&tags).Error
+	if err == nil {
 		flag = 2
 		return tags, flag
 	}
 
 	tags.Name = name
 
-	err = core.GetDB().Model(&tags).Save(&tags).Error; if err != nil {
+	err = core.GetDB().Model(&tags).Save(&tags).Error
+	if err != nil {
 		flag = 3
 		return tags, flag
 	}
@@ -57,15 +60,17 @@ func UpdateTagsByIdService(id int, name string) (tags *models.Tags, flag int) {
 	return tags, flag
 }
 
-//DeleteTagsByIdService
+// DeleteTagsByIdService
 func DeleteTagsByIdService(id int) (tags *models.Tags, flag int) {
 	db := core.GetDB()
 
-	err := db.First(&tags, id).Error; if err != nil {
+	err := db.First(&tags, id).Error
+	if err != nil {
 		return tags, 0
 	}
 
-	err = db.Delete(&tags, id).Error; if err != nil {
+	err = db.Delete(&tags, id).Error
+	if err != nil {
 		return tags, 2
 	}
 

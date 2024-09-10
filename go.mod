@@ -1,4 +1,4 @@
-module gin-blog
+module github.com/jeffcail/gin-blog
 
 go 1.17
 

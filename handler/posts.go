@@ -1,27 +1,30 @@
 package handler
 
 import (
-	"gin-blog/service"
-	"gin-blog/types"
-	"gin-blog/util"
 	"github.com/gin-gonic/gin"
+	"github.com/jeffcail/gin-blog/service"
+	"github.com/jeffcail/gin-blog/types"
+	"github.com/jeffcail/gin-blog/util"
 	"strconv"
 )
 
-//CreatePost
+// CreatePost
 func CreatePost(c *gin.Context) {
-	title, ok := c.GetPostForm("title"); if !ok {
+	title, ok := c.GetPostForm("title")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
 	desc := c.PostForm("desc")
-	content, ok := c.GetPostForm("content"); if !ok {
+	content, ok := c.GetPostForm("content")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	author, ok := c.GetPostForm("author"); if !ok {
+	author, ok := c.GetPostForm("author")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
@@ -29,12 +32,14 @@ func CreatePost(c *gin.Context) {
 	tags := c.PostForm("tags")
 	category := c.PostForm("category")
 
-	newCategory, err := strconv.Atoi(category); if err != nil {
+	newCategory, err := strconv.Atoi(category)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	ok = service.CreatePostService(title, desc, content, author, tags, newCategory); if !ok {
+	ok = service.CreatePostService(title, desc, content, author, tags, newCategory)
+	if !ok {
 		util.Error(c, int(types.ApiCode.FAILED), types.ApiCode.GetMessage(types.ApiCode.FAILED))
 		return
 	}
@@ -42,37 +47,42 @@ func CreatePost(c *gin.Context) {
 	util.Success(c, nil)
 }
 
-//GetPostsList
+// GetPostsList
 func GetPostsList(c *gin.Context) {
 	posts := service.GetPostsListService()
 
 	util.Success(c, posts)
 }
 
-//UpdatePostById
+// UpdatePostById
 func UpdatePostById(c *gin.Context) {
-	id, ok := c.GetPostForm("id"); if !ok {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	title, ok := c.GetPostForm("title"); if !ok {
+	title, ok := c.GetPostForm("title")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
 	desc := c.PostForm("desc")
-	content, ok := c.GetPostForm("content"); if !ok {
+	content, ok := c.GetPostForm("content")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	author, ok := c.GetPostForm("author"); if !ok {
+	author, ok := c.GetPostForm("author")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
@@ -92,14 +102,16 @@ func UpdatePostById(c *gin.Context) {
 	}
 }
 
-//DeletePostById
+// DeletePostById
 func DeletePostById(c *gin.Context) {
-	id, ok := c.GetPostForm("id"); if !ok {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}

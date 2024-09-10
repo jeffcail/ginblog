@@ -2,14 +2,14 @@ package handler
 
 import (
 	"fmt"
-	"gin-blog/service"
-	"gin-blog/types"
-	"gin-blog/util"
 	"github.com/gin-gonic/gin"
+	"github.com/jeffcail/gin-blog/service"
+	"github.com/jeffcail/gin-blog/types"
+	"github.com/jeffcail/gin-blog/util"
 	"strconv"
 )
 
-//CreateUser
+// CreateUser
 func CreateUser(c *gin.Context) {
 	username, ok := c.GetPostForm("username")
 	if !ok {
@@ -36,16 +36,17 @@ func CreateUser(c *gin.Context) {
 	util.Success(c, nil)
 
 }
-//FetchUsers
-func GetUsers(c *gin.Context)  {
+
+// FetchUsers
+func GetUsers(c *gin.Context) {
 	userList := service.GetUsersService()
 	fmt.Println(userList)
 
 	util.Success(c, userList)
 }
 
-//DeleteUserById
-func DeleteUserById(c *gin.Context)  {
+// DeleteUserById
+func DeleteUserById(c *gin.Context) {
 	id, ok := c.GetPostForm("id")
 	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
@@ -74,8 +75,8 @@ func DeleteUserById(c *gin.Context)  {
 	util.Success(c, nil)
 }
 
-//GetUserById
-func GetUserById(c *gin.Context)  {
+// GetUserById
+func GetUserById(c *gin.Context) {
 	id, ok := c.GetPostForm("id")
 	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
@@ -93,24 +94,28 @@ func GetUserById(c *gin.Context)  {
 	util.Success(c, user)
 }
 
-//UpdateUserById
-func UpdateUserById(c *gin.Context)  {
-	id, ok := c.GetPostForm("id"); if !ok {
+// UpdateUserById
+func UpdateUserById(c *gin.Context) {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	username, ok := c.GetPostForm("username"); if !ok {
+	username, ok := c.GetPostForm("username")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	password, ok := c.GetPostForm("password"); if !ok {
+	password, ok := c.GetPostForm("password")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
@@ -120,7 +125,8 @@ func UpdateUserById(c *gin.Context)  {
 	phone := c.PostForm("phone")
 	email := c.PostForm("email")
 
-	_, ok, err = service.UpdateUserByIdService(newId, username, newPassword, phone, email); if !ok {
+	_, ok, err = service.UpdateUserByIdService(newId, username, newPassword, phone, email)
+	if !ok {
 		util.Error(c, int(types.ApiCode.NOSUCHID), types.ApiCode.GetMessage(types.ApiCode.NOSUCHID))
 		return
 	}
@@ -133,19 +139,22 @@ func UpdateUserById(c *gin.Context)  {
 	util.Success(c, nil)
 }
 
-//DisableUserById
-func DisableUserById(c *gin.Context)  {
-	id, ok := c.GetPostForm("id"); if !ok {
+// DisableUserById
+func DisableUserById(c *gin.Context) {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	_, err = service.DisableUserByIdService(newId); if err != nil {
+	_, err = service.DisableUserByIdService(newId)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.NOSUCHID), types.ApiCode.GetMessage(types.ApiCode.NOSUCHID))
 		return
 	}
@@ -153,19 +162,22 @@ func DisableUserById(c *gin.Context)  {
 	util.Success(c, nil)
 }
 
-//EnableUserById
-func EnableUserById(c *gin.Context)  {
-	id, ok := c.GetPostForm("id"); if !ok {
+// EnableUserById
+func EnableUserById(c *gin.Context) {
+	id, ok := c.GetPostForm("id")
+	if !ok {
 		util.Error(c, int(types.ApiCode.LCAKPARAMETERS), types.ApiCode.GetMessage(types.ApiCode.LCAKPARAMETERS))
 		return
 	}
 
-	newId, err := strconv.Atoi(id); if err != nil {
+	newId, err := strconv.Atoi(id)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.CONVERTFAILED), types.ApiCode.GetMessage(types.ApiCode.CONVERTFAILED))
 		return
 	}
 
-	_, err = service.EnableUserByIdService(newId); if err != nil {
+	_, err = service.EnableUserByIdService(newId)
+	if err != nil {
 		util.Error(c, int(types.ApiCode.NOSUCHID), types.ApiCode.GetMessage(types.ApiCode.NOSUCHID))
 		return
 	}

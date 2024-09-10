@@ -1,15 +1,15 @@
 package middleware
 
 import (
-	"gin-blog/handler"
-	"gin-blog/types"
-	"gin-blog/util"
 	"github.com/gin-gonic/gin"
+	"github.com/jeffcail/gin-blog/handler"
+	"github.com/jeffcail/gin-blog/types"
+	"github.com/jeffcail/gin-blog/util"
 	"strings"
 )
 
-//AuthMiddleware
-func AuthMiddleware() func(c *gin.Context)  {
+// AuthMiddleware
+func AuthMiddleware() func(c *gin.Context) {
 	return func(c *gin.Context) {
 		authHeader := c.Request.Header.Get("Authorization")
 		if authHeader == "" {

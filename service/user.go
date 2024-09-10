@@ -2,12 +2,12 @@ package service
 
 import (
 	"fmt"
-	"gin-blog/constants"
-	core "gin-blog/db"
-	"gin-blog/models"
+	"github.com/jeffcail/gin-blog/constants"
+	core "github.com/jeffcail/gin-blog/db"
+	"github.com/jeffcail/gin-blog/models"
 )
 
-//CreateUserService
+// CreateUserService
 func CreateUserService(username, password, phone, email string, state int) bool {
 	db := core.GetDB()
 
@@ -27,13 +27,13 @@ func CreateUserService(username, password, phone, email string, state int) bool 
 	return false
 }
 
-//GetUsersService
+// GetUsersService
 func GetUsersService() (userList []*models.User) {
 	core.GetDB().Find(&userList)
 	return userList
 }
 
-//DeleteUserByIdService
+// DeleteUserByIdService
 func DeleteUserByIdService(id int) (err error, ok bool) {
 	err = core.GetDB().First(&models.User{}, id).Error
 	if err != nil {
@@ -44,17 +44,17 @@ func DeleteUserByIdService(id int) (err error, ok bool) {
 	return err, true
 }
 
-//GetUserByIdService
+// GetUserByIdService
 func GetUserByIdService(id int) (user []*models.User) {
 	core.GetDB().First(&user, id)
 	return
 }
 
-//UpdateUserByIdService
-func UpdateUserByIdService(id int, username, password, phone,email string) (user models.User, ok bool, err error) {
+// UpdateUserByIdService
+func UpdateUserByIdService(id int, username, password, phone, email string) (user models.User, ok bool, err error) {
 	err = core.GetDB().First(&user, id).Error
 	if err != nil {
-		return user,false, err
+		return user, false, err
 	}
 
 	user.Username = username
@@ -68,10 +68,10 @@ func UpdateUserByIdService(id int, username, password, phone,email string) (user
 		return user, false, err
 	}
 
-	return user,true, nil
+	return user, true, nil
 }
 
-//DisableUserByIdService
+// DisableUserByIdService
 func DisableUserByIdService(id int) (user models.User, err error) {
 	err = core.GetDB().First(&user, id).Error
 	fmt.Println(user)
@@ -84,7 +84,7 @@ func DisableUserByIdService(id int) (user models.User, err error) {
 	return user, nil
 }
 
-//EnableUserByIdService
+// EnableUserByIdService
 func EnableUserByIdService(id int) (user models.User, err error) {
 	err = core.GetDB().First(&user, id).Error
 	fmt.Println(user)
