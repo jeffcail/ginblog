@@ -1,4 +1,4 @@
-# Go语言开发博客
+# gin-blog
 > go+gin+gorm+mysql+vue
 > 博客简版
 
