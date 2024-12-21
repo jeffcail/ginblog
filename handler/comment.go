@@ -2,9 +2,9 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jeffcail/gin-blog/service"
-	"github.com/jeffcail/gin-blog/types"
-	"github.com/jeffcail/gin-blog/util"
+	"github.com/mazezen/gin-blog/service"
+	"github.com/mazezen/gin-blog/types"
+	"github.com/mazezen/gin-blog/util"
 	"strconv"
 )
 

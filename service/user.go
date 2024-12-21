@@ -2,9 +2,9 @@ package service
 
 import (
 	"fmt"
-	"github.com/jeffcail/gin-blog/constants"
-	core "github.com/jeffcail/gin-blog/db"
-	"github.com/jeffcail/gin-blog/models"
+	"github.com/mazezen/gin-blog/constants"
+	core "github.com/mazezen/gin-blog/db"
+	"github.com/mazezen/gin-blog/models"
 )
 
 // CreateUserService

@@ -2,10 +2,10 @@
 > go+gin+gorm+mysql+vue
 > 博客简版
 
-<a href="https://github.com/jeffcail/gin-blog/releases">
+<a href="https://github.com/mazezen/gin-blog/releases">
     <img src="https://img.shields.io/github/release/gin-blog/releases.svg" alt="GitHub release">
   </a>
-   <a href="https://github.com/jeffcail/gin-blog/blob/master/LICENSE">
+   <a href="https://github.com/mazezen/gin-blog/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
 </a>
 
@@ -71,7 +71,7 @@
 
 ## 后端
 ```git
-git clone git@github.com:jeffcail/gin-blog.git
+git clone git@github.com:mazezen/gin-blog.git
 ```
 ```shell
 ➜ cd gin-blog

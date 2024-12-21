@@ -1,7 +1,7 @@
 package models
 
 import (
-	core "github.com/jeffcail/gin-blog/db"
+	core "github.com/mazezen/gin-blog/db"
 	"gorm.io/gorm"
 )
 

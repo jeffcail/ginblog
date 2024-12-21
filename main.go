@@ -1,6 +1,6 @@
 package main
 
-import "github.com/jeffcail/gin-blog/routers"
+import "github.com/mazezen/gin-blog/routers"
 
 func main() {
 

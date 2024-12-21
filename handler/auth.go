@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	core "github.com/jeffcail/gin-blog/db"
-	"github.com/jeffcail/gin-blog/models"
-	"github.com/jeffcail/gin-blog/types"
-	"github.com/jeffcail/gin-blog/util"
+	core "github.com/mazezen/gin-blog/db"
+	"github.com/mazezen/gin-blog/models"
+	"github.com/mazezen/gin-blog/types"
+	"github.com/mazezen/gin-blog/util"
 	"time"
 )
 

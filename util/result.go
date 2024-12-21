@@ -2,7 +2,7 @@ package util
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jeffcail/gin-blog/types"
+	"github.com/mazezen/gin-blog/types"
 	"net/http"
 	"time"
 )
